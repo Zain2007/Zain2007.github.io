@@ -112,13 +112,33 @@
 
             <!-- Project 2 -->
             <div class="project-card">
-                <img src="assets/images/project-placeholder-2.jpg" alt="Project Two Preview">
+               <div style="width:100%; position:relative;">
+                  <img
+                    id="loanImage"
+                    src="https://github.com/Zain2007/meta-ads-performance-dashboard/blob/main/images/facebook.png?raw=true"
+                    alt="Bank Loan Dashboard"
+                    style="width:100%; height:auto; display:block;">
+                
+                  <button onclick="changeLoanImage(-1)"
+                    style="position:absolute; left:10px; top:50%;">
+                    &#10094;
+                  </button>
+                
+                  <button onclick="changeLoanImage(1)"
+                    style="position:absolute; right:10px; top:50%;">
+                    &#10095;
+                  </button>
+                </div>
                 <div class="project-card-content">
-                    <h3>Project Title Two</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
+                    <h3>META Ads PERFORMANCE ANALYSIS</h3>
+                    <p>An interactive Power BI dashboard designed to evaluate advertising performance across key metrics,
+                       including impressions, clicks, engagement, conversions, ad spend, and return on investment. 
+                       The dashboard provides a complete marketing-funnel view—from awareness and engagement to conversion 
+                        and purchase—along with demographic, geographic, campaign, and time-based analysis.
+                    </p>
                     <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Zain2007/meta-ads-performance-dashboard/tree/main" target="_blank" class="btn">Documentation</a>
+                        <a href="https://github.com/Zain2007/meta-ads-performance-dashboard/blob/main/images/facebook.png?raw=true" target="_blank" class="btn btn-secondary">View Dashboard</a>
                     </div>
                 </div>
             </div>
@@ -249,20 +269,44 @@
 
 <script src="assets/js/main.js"></script>
 <script>
-const loanImages = [
+const projectImages = {
+    project1 : [
   "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/summary.png",
   "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/overview.png",
   "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/details.png"
-];
+]
+    project2 : [
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/facebook.png",
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
+ ]
+    project3 : [
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/facebook.png",
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
+ ]
+    project4 : [
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/facebook.png",
+    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
+ ]
+        
+    } ;
 
-let loanIndex = 0;
 
-function changeLoanImage(direction) {
-  loanIndex = (loanIndex + direction + loanImages.length)
-    % loanImages.length;
+const imageIndexes = {
+  project1: 0,
+  project2: 0,
+  project3: 0,
+  project4: 0
+};
 
-  document.getElementById("loanImage").src =
-    loanImages[loanIndex];
+function changeImage(project, direction) {
+  const images = projectImages[project];
+
+  imageIndexes[project] =
+    (imageIndexes[project] + direction + images.length)
+    % images.length;
+
+  document.getElementById(project).src =
+    images[imageIndexes[project]];
 }
 </script>
     
