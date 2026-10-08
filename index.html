@@ -78,8 +78,25 @@
             <!-- Project 1 -->
              <div class="project-card">
                 <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="https://github.com/Zain2007/Bank-Loan-Project/blob/main/dashboard_images/summary.png?raw=true" alt="Bank Loan Dashboard"
-                    style="width:100%; height:auto; display:block;">
+                <div style="width:100%; position:relative;">
+
+  <img
+    id="loanImage"
+    src="https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/summary.png"
+    alt="Bank Loan Dashboard"
+    style="width:100%; height:auto; display:block;">
+
+  <button onclick="changeLoanImage(-1)"
+    style="position:absolute; left:10px; top:50%;">
+    &#10094;
+  </button>
+
+  <button onclick="changeLoanImage(1)"
+    style="position:absolute; right:10px; top:50%;">
+    &#10095;
+  </button>
+
+</div>
                 <div class="project-card-content">
                     <h3>Project Title One</h3>
                     <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
@@ -230,6 +247,23 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script>
+const loanImages = [
+  "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/summary.png",
+  "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/overview.png",
+  "https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/details.png"
+];
 
+let loanIndex = 0;
+
+function changeLoanImage(direction) {
+  loanIndex = (loanIndex + direction + loanImages.length)
+    % loanImages.length;
+
+  document.getElementById("loanImage").src =
+    loanImages[loanIndex];
+}
+</script>
+    
 </body>
 </html>
