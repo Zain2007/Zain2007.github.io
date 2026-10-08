@@ -85,13 +85,15 @@
                     alt="Bank Loan Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeImage('project1', -1)"
-                    style="position:absolute; left:10px; top:50%;">
+                  <button id="project1-prev"
+                          onclick="changeImage('project1', -1)"
+                          style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeImage('project1', 1)"
-                    style="position:absolute; right:10px; top:50%;">
+                  <button id="project1-next"
+                          onclick="changeImage('project1', 1)"
+                          style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
                 </div>
@@ -119,13 +121,15 @@
                     alt="Bank Loan Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeImage('project2', -1)"
-                    style="position:absolute; left:10px; top:50%;">
+                  <button id="project2-prev"
+                          onclick="changeImage('project2', -1)"
+                          style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeImage('project2', 1)"
-                    style="position:absolute; right:10px; top:50%;">
+                  <button id="project2-next"
+                          onclick="changeImage('project2', 1)"
+                          style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
                 </div>
@@ -151,13 +155,15 @@
                     alt="Hospital emergency Room Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeImage('project3', -1)"
-                    style="position:absolute; left:10px; top:50%;">
+                  <button id="project3-prev"
+                          onclick="changeImage('project3', -1)"
+                          style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeImage('project3', 1)"
-                    style="position:absolute; right:10px; top:50%;">
+                  <button id="project3-next"
+                          onclick="changeImage('project3', 1)"
+                          style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
                 </div>
@@ -184,13 +190,15 @@
                     alt="Bank Loan Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeImage('project4', -1)"
-                    style="position:absolute; left:10px; top:50%;">
+                  <button id="project4-prev"
+                          onclick="changeImage('project4', -1)"
+                          style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeImage('project4', 1)"
-                    style="position:absolute; right:10px; top:50%;">
+                  <button id="project4-next"
+                          onclick="changeImage('project4', 1)"
+                          style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
                 </div>
@@ -341,13 +349,45 @@ const imageIndexes = {
 function changeImage(project, direction) {
   const images = projectImages[project];
 
-  imageIndexes[project] =
-    (imageIndexes[project] + direction + images.length)
-    % images.length;
+  if (!images || images.length === 0) return;
+
+  let newIndex = imageIndexes[project] + direction;
+
+  if (newIndex < 0 || newIndex >= images.length) {
+    return;
+  }
+
+  imageIndexes[project] = newIndex;
 
   document.getElementById(project).src =
-    images[imageIndexes[project]];
+    images[newIndex];
+
+  updateArrows(project);
 }
+
+function updateArrows(project) {
+  const index = imageIndexes[project];
+  const total = projectImages[project].length;
+
+  const prev = document.getElementById(project + "-prev");
+  const next = document.getElementById(project + "-next");
+
+  if (prev) {
+    prev.style.display = index === 0 ? "none" : "block";
+  }
+
+  if (next) {
+    next.style.display =
+      index === total - 1 ? "none" : "block";
+  }
+}
+
+// Set arrows when page loads
+window.addEventListener("load", function() {
+  Object.keys(projectImages).forEach(function(project) {
+    updateArrows(project);
+  });
+});
 </script>
     
 </body>
