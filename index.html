@@ -80,17 +80,17 @@
                 <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
                 <div style="width:100%; position:relative;">
                   <img
-                    id="loanImage"
+                    id="project1"
                     src="https://raw.githubusercontent.com/Zain2007/Bank-Loan-Project/main/dashboard_images/summary.png"
                     alt="Bank Loan Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeLoanImage(-1)"
+                  <button onclick="changeImage('project1', -1)"
                     style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeLoanImage(1)"
+                  <button onclick="changeImage('project1', 1)"
                     style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
@@ -114,17 +114,17 @@
             <div class="project-card">
                <div style="width:100%; position:relative;">
                   <img
-                    id="loanImage"
+                    id="project2"
                     src="https://github.com/Zain2007/meta-ads-performance-dashboard/blob/main/images/facebook.png?raw=true"
                     alt="Bank Loan Dashboard"
                     style="width:100%; height:auto; display:block;">
                 
-                  <button onclick="changeLoanImage(-1)"
+                  <button onclick="changeImage('project2', -1)"
                     style="position:absolute; left:10px; top:50%;">
                     &#10094;
                   </button>
                 
-                  <button onclick="changeLoanImage(1)"
+                  <button onclick="changeImage('project2', 1)"
                     style="position:absolute; right:10px; top:50%;">
                     &#10095;
                   </button>
@@ -142,29 +142,68 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/project-placeholder-3.jpg" alt="Project Three Preview">
+           <!-- Project 3 -->
+           <div class="project-card">
+               <div style="width:100%; position:relative;">
+                  <img
+                    id="project3"
+                    src="https://github.com/Zain2007/Hospital_Project/blob/main/dashbboard_screenshots/monthly_view.png?raw=true"
+                    alt="Hospital emergency Room Dashboard"
+                    style="width:100%; height:auto; display:block;">
+                
+                  <button onclick="changeImage('project3', -1)"
+                    style="position:absolute; left:10px; top:50%;">
+                    &#10094;
+                  </button>
+                
+                  <button onclick="changeImage('project3', 1)"
+                    style="position:absolute; right:10px; top:50%;">
+                    &#10095;
+                  </button>
+                </div>
                 <div class="project-card-content">
-                    <h3>Project Title Three</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
+                    <h3>HOSPITAL EMERGENCY ROOM ANALYSIS</h3>
+                    <p>An interactive Power BI dashboard designed to evaluate advertising performance across key metrics,
+                       including impressions, clicks, engagement, conversions, ad spend, and return on investment. 
+                       The dashboard provides a complete marketing-funnel view—from awareness and engagement to conversion 
+                        and purchase—along with demographic, geographic, campaign, and time-based analysis.
+                    </p>
                     <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Zain2007/Hospital_Project/tree/main" target="_blank" class="btn">Documentation</a>
+                        <a href="https://github.com/Zain2007/Hospital_Project/blob/main/dashbboard_screenshots/monthly_view.png?raw=true" target="_blank" class="btn btn-secondary">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 4 -->
             <div class="project-card">
-                <img src="assets/images/project-placeholder-4.jpg" alt="Project Four Preview">
+               <div style="width:100%; position:relative;">
+                  <img
+                    id="project4"
+                    src="https://github.com/Zain2007/Finance-Project/blob/main/dashboard_screenshots/Overview_analysis.png?raw=true"
+                    alt="Bank Loan Dashboard"
+                    style="width:100%; height:auto; display:block;">
+                
+                  <button onclick="changeImage('project4', -1)"
+                    style="position:absolute; left:10px; top:50%;">
+                    &#10094;
+                  </button>
+                
+                  <button onclick="changeImage('project4', 1)"
+                    style="position:absolute; right:10px; top:50%;">
+                    &#10095;
+                  </button>
+                </div>
                 <div class="project-card-content">
-                    <h3>Project Title Four</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
+                    <h3>FINANCE ANALYSIS</h3>
+                    <p>An interactive Power BI dashboard designed to evaluate advertising performance across key metrics,
+                       including impressions, clicks, engagement, conversions, ad spend, and return on investment. 
+                       The dashboard provides a complete marketing-funnel view—from awareness and engagement to conversion 
+                        and purchase—along with demographic, geographic, campaign, and time-based analysis.
+                    </p>
                     <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Zain2007/Finance-Project/tree/main" target="_blank" class="btn">Documentation</a>
+                        <a href="https://github.com/Zain2007/Finance-Project/blob/main/dashboard_screenshots/Overview_analysis.png?raw=true" target="_blank" class="btn btn-secondary">View Dashboard</a>
                     </div>
                 </div>
             </div>
@@ -280,12 +319,13 @@ const projectImages = {
     "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
  ]
     project3 : [
-    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/facebook.png",
-    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
+    "https://github.com/Zain2007/Hospital_Project/blob/main/dashbboard_screenshots/consolidated_view.png?raw=true",
+    "https://github.com/Zain2007/Hospital_Project/blob/main/dashbboard_screenshots/monthly_view.png?raw=true",
+    "https://github.com/Zain2007/Hospital_Project/blob/main/dashbboard_screenshots/patient_details.png?raw=true"
  ]
     project4 : [
-    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/facebook.png",
-    "https://raw.githubusercontent.com/Zain2007/meta-ads-performance-dashboard/main/images/instagram.png"
+    "https://github.com/Zain2007/Finance-Project/blob/main/dashboard_screenshots/Overview_analysis.png?raw=true",
+    "https://github.com/Zain2007/Finance-Project/blob/main/dashboard_screenshots/Transactions.png?raw=true"
  ]
         
     } ;
